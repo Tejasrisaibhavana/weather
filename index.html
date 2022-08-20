@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Weather</title>
+  </head>
+  <body>
+    <h2 class="heading">Weather forecast</h2>
+
+    <div class="getLoc">
+      <button id="getLocation" onclick="fetchLocation()">At my location</button>
+
+      <div style="font-size: 1.5em; margin: 12px">or</div>
+
+      <label for="selectLocation">Choose a location:</label>
+      <div id="selectLocation">
+        <select name="country" class="countries" id="countryId">
+          <option value="">Select Country</option>
+        </select>
+
+        <select name="state" class="states" id="stateId">
+          <option value="">Select State</option>
+        </select>
+
+        <select name="city" class="cities" id="cityId" onchange="manualFetch()">
+          <option value="">Select City</option>
+        </select>
+
+        <!-- <button onclick="manualFetch()">Get weather Info</button> -->
+      </div>
+
+      <!-- <select id="locations" onchange="manualFetch()" marginLeft="20px">
+            <option value="">Choose a location</option>
+            <option value="hyderabad">Hyderabad</option>
+            <option value="delhi">Delhi</option>
+            <option value="chennai">Chennai</option>
+            <option value="mumbai">Mumbai</option>
+            <option value="patna">Patna</option>
+        </select> -->
+    </div>
+
+    <div class="result">
+      <h2 class="location"></h2>
+      <div class="status"></div>
+      <div class="temp"></div>
+      <div class="gust"></div>
+      <div class="humidity"></div>
+      <div class="lastUpdated"></div>
+    </div>
+
+    <div class="sevenDays"></div>
+
+    <div class="chart">
+      <div id="curve_chart" style="min-width: 60em; height: 30em"></div>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//geodata.solutions/includes/countrystatecity.js"></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <script type="text/javascript" src="chart.js"></script>
+  </body>
+</html>
